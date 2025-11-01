@@ -1,6 +1,7 @@
 import { foodImg1, foodImg2, foodImg3 } from "../constants";
+import { memo } from "react";
 
-const FoodSection = () => {
+const FoodSection = memo(() => {
     const foodItems = [
         {
             title: "Fresh Bite Co.",
@@ -32,6 +33,7 @@ const FoodSection = () => {
                                 src={item.image}
                                 alt={item.title}
                                 className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full mb-3 sm:mb-4 object-cover"
+                                loading="lazy"
                             />
                             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
                                 {item.title}
@@ -45,6 +47,7 @@ const FoodSection = () => {
             </div>
         </div>
     );
-};
+});
 
+FoodSection.displayName = "FoodSection";
 export default FoodSection;

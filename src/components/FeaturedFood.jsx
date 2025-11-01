@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
     selectProducts,
@@ -7,8 +7,9 @@ import {
 import { fetchProducts } from "../features/productsSlice";
 import { useNavigate } from "react-router-dom";
 import { topRightArrow } from "../constants";
+import { backendBaseUrl } from "../API/axios";
 
-const FeaturedFoods = () => {
+const FeaturedFoods = memo(() => {
     const dispatch = useDispatch();
     const products = useSelector(selectProducts);
     const status = useSelector(selectProductsStatus);
@@ -72,11 +73,12 @@ const FeaturedFoods = () => {
                             }`}
                         >
                             <img
-                                src={`http://localhost:8000${product.imageUrl}`}
+                                src={backendBaseUrl + product.imageUrl}
                                 alt={product.nom}
                                 className={`w-full h-full object-cover ${
                                     product.produitId === 13 && "lg:h-[480px]"
                                 }`}
+                                loading="lazy"
                             />
                             <div className="absolute bottom-2 left-0 right-0 py-7 px-4 mx-2 backdrop-blur-md bg-gray-500/30 rounded-4xl">
                                 <h3 className="text-main-100 font-normal text-xl">
@@ -103,6 +105,7 @@ const FeaturedFoods = () => {
             </div>
         </div>
     );
-};
+});
 
+FeaturedFoods.displayName = "FeaturedFoods";
 export default FeaturedFoods;

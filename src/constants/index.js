@@ -1,10 +1,3 @@
-export const navLists = [
-    { name: "Home", path: "/" },
-    { name: "Menu", path: "/Store" },
-    { name: "Contact", path: "/contact-us" },
-    { name: "About", path: "/about" },
-];
-
 import fresh from "../assets/images/fresh_bite.jpg";
 import tasty from "../assets/images/tasty.jpg";
 import flavor from "../assets/images/flavor.jpg";
@@ -35,6 +28,13 @@ import fuji from "../assets/images/fuji.svg";
 import merida from "../assets/images/merida.svg";
 import pinarello from "../assets/images/pinarello.svg";
 import santa_cruz from "../assets/images/santa-cruz.svg";
+
+export const navLists = [
+    { name: "Home", path: "/" },
+    { name: "Menu", path: "/Store" },
+    { name: "Contact", path: "/contact-us" },
+    { name: "About", path: "/about" },
+];
 
 // importing  NavIcons
 export const logo = react;

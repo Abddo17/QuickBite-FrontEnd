@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, memo } from "react";
 import { heroImg, plateIcon } from "../constants";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Link, useNavigate } from "react-router-dom";
-const HeroSection = () => {
+
+const HeroSection = memo(() => {
     const navigate = useNavigate();
     const handleRedirect = () => {
         navigate("/store");
@@ -95,12 +96,15 @@ const HeroSection = () => {
                             src={heroImg}
                             alt="Burger"
                             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl object-contain"
+                            loading="eager"
+                            fetchpriority="high"
                         />
                     </div>
                 </div>
             </section>
         </div>
     );
-};
+});
 
+HeroSection.displayName = "HeroSection";
 export default HeroSection;

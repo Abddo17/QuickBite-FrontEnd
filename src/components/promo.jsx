@@ -1,8 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import { promoImg, topRightArrow } from "../constants";
 import { useNavigate } from "react-router-dom";
+import { memo } from "react";
 
-const StorePromo = () => {
+const StorePromo = memo(() => {
     const navigate = useNavigate();
     const navigateTo = () => {
         navigate("/app");
@@ -43,11 +44,13 @@ const StorePromo = () => {
                         src={promoImg}
                         alt="Burger Promo"
                         className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto object-contain z-20"
+                        loading="lazy"
                     />
                 </div>
             </div>
         </section>
     );
-};
+});
 
+StorePromo.displayName = "StorePromo";
 export default StorePromo;
