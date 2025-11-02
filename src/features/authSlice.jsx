@@ -61,6 +61,7 @@ export const fetchUser = createAsyncThunk(
   "auth/fetchUser",
   async (_, { rejectWithValue }) => {
     try {
+      await axiosInstance.get("/sanctum/csrf-cookie");
       const response = await axiosInstance.get("/api/user");
       return { user: response.data };
     } catch (error) {
