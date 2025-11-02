@@ -9,16 +9,5 @@ export const axiosInstance = axios.create({
   withCredentials: true,
 });
 
-axiosInstance.interceptors.request.use((config) => {
-  const xsrfToken = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("XSRF-TOKEN="))
-    ?.split("=")[1];
-    
-  console.log("🔑 XSRF-TOKEN from cookie:", xsrfToken);
-  console.log("🚀 Headers Axios will send:", config.headers);
-
-  return config;
-});
 
 export default axiosInstance;
