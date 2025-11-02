@@ -10,10 +10,17 @@ export const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/);
-  if (match) {
-    config.headers["X-XSRF-TOKEN"] = decodeURIComponent(match[1]);
+  const token = decodeURIComponent(
+    document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("XSRF-TOKEN="))
+      ?.split("=")[1] || ""
+  );
+
+  if (token) {
+    config.headers["X-XSRF-TOKEN"] = token;
   }
+
   return config;
 });
 
