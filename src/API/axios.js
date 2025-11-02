@@ -7,6 +7,8 @@ export const backendBaseUrl =
 export const axiosInstance = axios.create({
   baseURL: backendBaseUrl,
   withCredentials: true,
+  xsrfCookieName: "XSRF-TOKEN",
+  xsrfHeaderName: "X-XSRF-TOKEN",
 });
 
 export default axiosInstance;
