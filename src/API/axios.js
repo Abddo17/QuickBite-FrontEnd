@@ -10,16 +10,13 @@ export const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const token = decodeURIComponent(
-    document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("XSRF-TOKEN="))
-      ?.split("=")[1] || ""
-  );
-
-  if (token) {
-    config.headers["X-XSRF-TOKEN"] = token;
-  }
+  const xsrfToken = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("XSRF-TOKEN="))
+    ?.split("=")[1];
+    
+  console.log("🔑 XSRF-TOKEN from cookie:", xsrfToken);
+  console.log("🚀 Headers Axios will send:", config.headers);
 
   return config;
 });
