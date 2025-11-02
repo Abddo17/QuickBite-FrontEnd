@@ -7,8 +7,14 @@ export const backendBaseUrl =
 export const axiosInstance = axios.create({
   baseURL: backendBaseUrl,
   withCredentials: true,
-  xsrfCookieName: "XSRF-TOKEN",
-  xsrfHeaderName: "X-XSRF-TOKEN",
+});
+
+axiosInstance.interceptors.request.use((config) => {
+  const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/);
+  if (match) {
+    config.headers["X-XSRF-TOKEN"] = decodeURIComponent(match[1]);
+  }
+  return config;
 });
 
 export default axiosInstance;
