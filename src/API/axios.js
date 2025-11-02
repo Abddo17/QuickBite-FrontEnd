@@ -3,7 +3,7 @@
 import axios from "axios";
 
 export const backendBaseUrl =
-  "https://quickbite-production-61fb.up.railway.app";
+  "https://quick-bite-front-end-oav9.vercel.app";
 export const axiosInstance = axios.create({
   baseURL: backendBaseUrl,
   withCredentials: true,
