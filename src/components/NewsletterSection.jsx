@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { Mail, Send } from "lucide-react";
-import {axiosInstance} from "../API/axios";
+import axiosInstance from "../API/axios.js";
 
 const NewsletterSection = memo(() => {
   const [email, setEmail] = useState("");
