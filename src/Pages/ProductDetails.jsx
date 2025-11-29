@@ -178,7 +178,7 @@ const Details = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, rgba(245, 236, 222, 0.1), rgba(245, 236, 222, 0.3))",
+                  "linear-gradient(to bottom, rgba(245, 236, 222, 0.1), rgba(245, 236, 222, 0.1))",
               }}
             />
           </div>
