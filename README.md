@@ -8,8 +8,10 @@ A modern, full-featured food delivery web application built with React and Vite.
   <img src="https://res.cloudinary.com/deg3ethat/image/upload/v1764511477/50b81b89-63ad-455f-aad1-5070630fa48f.png" width="80%" />
 </p>
 <p align="center">
-  <img src="https://res.cloudinary.com/deg3ethat/image/upload/v1764511813/31602cd8-b9be-4731-ae72-b77b76741c24.png" width="45%" />
-  <img src="https://res.cloudinary.com/deg3ethat/image/upload/v1764511635/b4d3827b-c8e8-4b2b-bdb6-2fe0603cdae7.png" width="45%" />
+  <img src="https://res.cloudinary.com/deg3ethat/image/upload/v1764511813/31602cd8-b9be-4731-ae72-b77b76741c24.png" width="80%" />
+</p>
+<p align="center">
+<img src="https://res.cloudinary.com/deg3ethat/image/upload/v1764511635/b4d3827b-c8e8-4b2b-bdb6-2fe0603cdae7.png" width="80%" />
 </p>
 
 🌐 **Live Demo**: [https://quick-bite-front-end-obae.vercel.app](https://quick-bite-front-end-obae.vercel.app)
